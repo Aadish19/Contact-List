@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+            <% title %>
+        </title>
+    </head>
+
+    <body>
+        <h1>Playground</h1>
+
+        <ul>
+            <% for(let i=1;i<=10;i++) { %>
+                <li>
+                    <%= i %>
+                </li>
+            <% } %>
+        </ul>
+
+        <% var a = false; %>
+
+        <% if(a==true) { %>
+            <h1>Trueeee</h1>
+        <% } else { %>
+            <h1>Falseee :(</h1>
+        <% } %>
+    </body>
+</html>

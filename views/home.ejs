@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+
+    <body>
+        <h1 id="heading">
+            <i class="fa fa-address-book" aria-hidden="true"></i>
+            My Contacts Page</h1>
+
+        <div id="list-div" align="center">
+            <div id="main-div-contacts">
+                <ul id="un-list1">
+                    <% for(let i of contact_list) { %>
+                        <li id="list-details">
+                            <div id="details">
+                                <p id="para1"> <%= i.name %>  </p>
+                                <p id="para2"> <%= i.phone %> </p>
+                            </div>
+                            <div id="delete">
+                                <a href="/delete-contact/?id=<%= i._id %>">
+                                    <i class="fa-solid fa-square-xmark"></i>
+                                </a>
+                            </div>
+                        </li>
+                        
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+
+        
+        <form action="/create-contact" method = "POST">
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="number" name="phone" minlength="10" placeholder="Enter Number"  required>
+
+            <button> Add Contact </button>
+        </form>
+        
+        <script type="text/javascript" src="/js/home.js"></script>
+    </body>
+</html>
